@@ -46,13 +46,24 @@ if (navSocialToggle && navSocial) {
 // #region NAVBAR SCROLL EFFECT
 const navbar = document.querySelector(".navbar");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+let isNavScrolling = false;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!isNavScrolling) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+        isNavScrolling = false;
+      });
+      isNavScrolling = true;
+    }
+  },
+  { passive: true },
+);
 // #endregion
 
 // #region SCROLL ANIMATIONS
@@ -130,6 +141,22 @@ const songs = [
   {
     title: "mltsht alklwb",
     path: "../assets/music/mltsht alklwb.mp3",
+  },
+  {
+    title: "ya smra",
+    path: "../assets/music/ya smra.mp3",
+  },
+  {
+    title: "gyby bywgany",
+    path: "../assets/music/gyby bywgany.mp3",
+  },
+  {
+    title: "darb alywy",
+    path: "../assets/music/darb alywy.mp3",
+  },
+  {
+    title: "bomba",
+    path: "../assets/music/bomba.mp3",
   },
 ];
 // ------------------------------------
@@ -504,7 +531,20 @@ function highlightNavLink() {
   });
 }
 
-window.addEventListener("scroll", highlightNavLink);
+let isHighlightScrolling = false;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!isHighlightScrolling) {
+      window.requestAnimationFrame(() => {
+        highlightNavLink();
+        isHighlightScrolling = false;
+      });
+      isHighlightScrolling = true;
+    }
+  },
+  { passive: true },
+);
 // #endregion
 
 // #region TESTIMONIALS ANIMATION
@@ -514,42 +554,34 @@ testimonials.forEach((card, index) => {
 });
 // #endregion
 
-// #region PARALLAX EFFECT FOR HERO
-window.addEventListener("scroll", () => {
-  const scrolled = window.pageYOffset;
-  const heroContent = document.querySelector(".hero-content");
-  const heroBgIcon = document.querySelector(".hero-bg-icon");
-
-  if (heroContent) {
-    heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-    heroContent.style.opacity = 1 - scrolled / 700;
-  }
-
-  if (heroBgIcon) {
-    heroBgIcon.style.transform = `translateY(${scrolled * 0.3}px) rotate(${
-      scrolled * 0.1
-    }deg)`;
-  }
-});
-// #endregion
-
 // #region Interactive Parallax on Mouse Move
 const hero = document.querySelector(".hero");
 if (hero) {
-  hero.addEventListener("mousemove", (e) => {
-    const icon = document.querySelector(".hero-bg-icon");
-    const content = document.querySelector(".hero-content");
-    if (icon) {
-      const moveX = (e.clientX - window.innerWidth / 2) * 0.05;
-      const moveY = (e.clientY - window.innerHeight / 2) * 0.05;
-      icon.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 0.1}deg)`;
-    }
-    if (content) {
-      const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-      const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-      content.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    }
-  });
+  let isHeroMoving = false;
+  hero.addEventListener(
+    "mousemove",
+    (e) => {
+      if (!isHeroMoving) {
+        window.requestAnimationFrame(() => {
+          const icon = document.querySelector(".hero-bg-icon");
+          const content = document.querySelector(".hero-content");
+          if (icon) {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.05;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.05;
+            icon.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 0.1}deg)`;
+          }
+          if (content) {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            content.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          }
+          isHeroMoving = false;
+        });
+        isHeroMoving = true;
+      }
+    },
+    { passive: true },
+  );
 }
 // #endregion
 
