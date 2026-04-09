@@ -143,6 +143,22 @@ const songs = [
     path: "../assets/music/mltsht alklwb.mp3",
   },
   {
+    title: "mgaryh",
+    path: "../assets/music/mgaryh.mp3",
+  },
+  {
+    title: "bobo",
+    path: "../assets/music/bobo.mp3",
+  },
+  {
+    title: "Elly maytsamo",
+    path: "../assets/music/Elly maytsamo.mp3",
+  },
+  {
+    title: "Abouya Wassany",
+    path: "../assets/music/Abouya Wassany.mp3",
+  },
+  {
     title: "ya smra",
     path: "../assets/music/ya smra.mp3",
   },
