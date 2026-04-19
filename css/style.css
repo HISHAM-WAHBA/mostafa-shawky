@@ -2356,7 +2356,6 @@ section.visible .testimonials-grid {
 
   .hero {
     background-size: cover;
-    background-position: center left 35%;
     justify-content: center;
     padding-right: 0;
   }
@@ -2424,7 +2423,7 @@ section.visible .testimonials-grid {
   }
   .hero {
     background-size: cover;
-    background-position: center;
+    background-position: center left 35%;
     justify-content: center;
     padding: 2rem 1rem;
   }
