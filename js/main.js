@@ -139,39 +139,39 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // 🎵 PLAYER CONFIGURATION 🎵
 const songs = [
   {
-    title: "mltsht alklwb",
+    title: "ملطشة القلوب",
     path: "../assets/music/mltsht alklwb.mp3",
   },
   {
-    title: "mgaryh",
+    title: "مجاريح",
     path: "../assets/music/mgaryh.mp3",
   },
   {
-    title: "bobo",
+    title: "بؤبؤ",
     path: "../assets/music/bobo.mp3",
   },
   {
-    title: "Elly maytsamo",
+    title: "اللى مايتسموا",
     path: "../assets/music/Elly maytsamo.mp3",
   },
   {
-    title: "Abouya Wassany",
+    title: "ابويا وصاني",
     path: "../assets/music/Abouya Wassany.mp3",
   },
   {
-    title: "ya smra",
+    title: "يا سمرة",
     path: "../assets/music/ya smra.mp3",
   },
   {
-    title: "gyby bywgany",
+    title: "جيبي بيوجعني",
     path: "../assets/music/gyby bywgany.mp3",
   },
   {
-    title: "darb alywy",
+    title: "ضارب عليوي",
     path: "../assets/music/darb alywy.mp3",
   },
   {
-    title: "bomba",
+    title: "بومبا",
     path: "../assets/music/bomba.mp3",
   },
 ];
