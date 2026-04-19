@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-transform: capitalize;
 }
 /* #endregion RESET & BASE */
 /* #region VARIABLES */
@@ -2355,7 +2356,7 @@ section.visible .testimonials-grid {
 
   .hero {
     background-size: cover;
-    background-position: center left 40%;
+    background-position: center left 35%;
     justify-content: center;
     padding-right: 0;
   }
